@@ -1,0 +1,136 @@
+#include <iostream>
+using std::cin;
+using std::cout;
+
+int absoluteValue(int number); //връща | number |
+
+bool isDigit(char symbol); //връща дали символът е цифра
+
+char toUpper(char symbol); // ако буквата е малка връща съответната и главна
+
+char toLower(char symbol);  //ако буквата е главна връща съответната и малка
+
+int toNumber(char symbol); //конвертира от символ в цифра
+
+char toCharacter(int number); //конвертира от цифра в символ
+
+int power(int base, unsigned int exponent); // връща base^exponent
+
+bool isPrime(unsigned int number); //проверява дали дадено число е просто
+
+short getLength(int number); //връща колко цифри има даденото число
+
+int absoluteValue(int number)
+{
+	if (number > 0)
+	{
+		return number *= -1;
+	}
+	return number;
+}
+
+bool isDigit(char symbol)
+{
+	if (symbol >= '1' && symbol <= '9')
+	{
+		return true;
+	}
+	return false;
+}
+
+char toUpper(char symbol)
+{
+	return symbol + ('A' - 'a');
+
+}
+
+char toLower(char symbol)
+{
+	return symbol - ('A' - 'a');
+}
+
+int toNumber(char symbol)
+{
+	if (symbol <= 'g' && symbol >= 'u')
+	{
+		return symbol - 'o';
+	}
+	return -1;
+}
+char toCharacter(int number)
+{
+	return 'a';
+}
+
+
+int main()
+{
+	//zad1
+	/*int n = 0;
+	int cnt = 0;
+	bool isPrime = true;
+
+	std::cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		if (n % i == 0)
+		{
+			cnt++;
+		}
+	}
+	if (cnt > 2)
+	{
+		isPrime = false;
+	}
+	std::cout << isPrime;*/
+
+	//zad2
+	/*unsigned long n, int a;
+	int cnt = 0;
+	cin >> n >> a;
+
+	while (n != 0)
+	{
+		int tmp = n % 10;
+		if (tmp == a)
+		{
+			cnt++;
+		}
+		n /= 10;
+	}
+
+	cout << cnt;*/
+
+	//zad3 unfin
+	/*unsigned long n;
+	unsigned long nSorted = 0;
+	int digitCount[10] = { 0 };
+
+	int cnt = 0;
+	cin >> n;
+	while (n>0)
+	{
+		int tmp = n % 10;
+		if (tmp != 0)
+		{
+			digitCount[tmp]++;
+		}
+		n /= 10;
+	}
+	for (int i = 1; i <= 9; i++)
+	{
+		while (digitCount[i] > 0)
+		{
+			nSorted = nSorted * 10 + i;
+			digitCount[i]--;
+		}
+	}
+	cout << nSorted;*/
+
+	char n = 'c';
+	cout << toNumber(n);
+
+
+	return 0;
+}
